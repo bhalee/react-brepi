@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+brepi is a
+[single-page application](https://en.wikipedia.org/wiki/Single-page_application)
+where you can discover Brewdog's beers.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The purpose of the project
 
-## Available Scripts
+The purpose of the project is to get familiar with React itself. By the end of
+this project you will have a basic understanding of:
 
-In the project directory, you can run:
+- how to work with React
+- how to work with components
+- how to pass properties around
+- how to handle the state of a component
+- how to write JSX
+- and many more
 
-### `yarn start`
+But you are not going to get a deep understanding of React and that is not the
+purpose of this project.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## What are you going to use?
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [create-react-app](https://github.com/facebook/create-react-app)
+  - We don't want to waste time on setting up the React environment
+- [Ant Design](https://ant.design/)
+  - For design elements
+- [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+  - Try **not** to use
+    [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+- [Punk API](https://punkapi.com/)
+  - For the data about the beers
 
-### `yarn test`
+## What are you NOT going to use?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Redux](https://redux.js.org/)
+- [React Router](https://reacttraining.com/react-router/)
+- and many more
 
-### `yarn build`
+## Specification
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Main page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The main page must display:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- the header
+- at least 6 beer tiles
+- the paginator
 
-### `yarn eject`
+### Header
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The header must display:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- a heading
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Beer tile
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The beer tile must display the beer's:
 
-## Learn More
+- image
+- name
+- description on click
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```gherkin
+Given a beer tile without description
+When I click on the beer tile
+Then I should see the description
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Given a beer tile with description
+When I click on the beer tile
+Then I should not see the description
 
-### Code Splitting
+Given a beer tile ("BT1") with description
+Given an other beer tile ("BT2") without a description
+When I click on BT2
+Then I should see the description of BT2
+But I should not see the description of BT1
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Paginator
 
-### Analyzing the Bundle Size
+The paginator should enable the user to list the next or previous page of beers.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Mockup
 
-### Making a Progressive Web App
+You can use the following mockup to do the application but feel free to make it
+unique!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![the mockup of brepi](brepi-mockup.jpg)

@@ -78,10 +78,3 @@ But I should not see the description of BT1
 ### Paginator
 
 The paginator should enable the user to list the next or previous page of beers.
-
-### Mockup
-
-You can use the following mockup to do the application but feel free to make it
-unique!
-
-![the mockup of brepi](brepi-mockup.jpg)
